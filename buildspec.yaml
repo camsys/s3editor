@@ -1,0 +1,12 @@
+version: 0.2
+
+install:
+    commands:
+      - sudo amazon-linux-extras enable docker
+      - sudo yum install amazon-ecr-credential-helper
+      - echo '{"credsStore": "ecr-login"}' ~/.docker/config.json
+
+phases:
+  build:
+    commands:
+       - mvn -Pproduction package dockerfile:build dockerfile:push
