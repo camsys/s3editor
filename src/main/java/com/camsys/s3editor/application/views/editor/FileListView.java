@@ -25,7 +25,6 @@ import org.supercsv.io.CsvMapReader;
 import org.supercsv.io.ICsvMapReader;
 import org.supercsv.prefs.CsvPreference;
 
-import com.amazonaws.auth.profile.ProfileCredentialsProvider;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
@@ -63,11 +62,9 @@ public class FileListView extends HorizontalLayout {
 	
     public FileListView() {
     	s3Client = AmazonS3ClientBuilder.standard()
-                .withCredentials(new ProfileCredentialsProvider())
                 .withRegion(Regions.US_EAST_1)
                 .build();
     	    	
-
     	VerticalLayout layout = new VerticalLayout();
         layout.setWidthFull();
         layout.setHeightFull();
