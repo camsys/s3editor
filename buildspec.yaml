@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - sudo amazon-linux-extras enable docker
+      - amazon-linux-extras enable docker
 
   pre_build:
     commands:
