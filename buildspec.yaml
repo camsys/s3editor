@@ -1,14 +1,15 @@
 version: 0.2
 
-install:
+phases:
+  install:
     commands:
       - sudo amazon-linux-extras enable docker
-	  - pre_build:
+
+  pre_build:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 347059689224.dkr.ecr.us-east-1.amazonaws.com
-
-phases:
+  
   build:
     commands:
        - mvn -Pproduction package dockerfile:build dockerfile:push
