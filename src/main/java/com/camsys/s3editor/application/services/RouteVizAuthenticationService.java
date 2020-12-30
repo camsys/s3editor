@@ -25,7 +25,7 @@ public class RouteVizAuthenticationService {
 			 try {
 				 authDatabase = DriverManager.getConnection(
 					 "jdbc:postgresql://otp-admin-prod.ckgyhi5n2bdz.us-east-1.rds.amazonaws.com/otp_admin_prod?readOnlyMode=true", 
-					 System.getProperty("AUTH_DB_USERNAME"), System.getProperty("AUTH_DB_PASSWORD"));
+					 System.getenv("AUTH_DB_USERNAME"), System.getenv("AUTH_DB_PASSWORD"));
 
 				 if(authDatabase == null || authDatabase.isValid(10)) // in seconds
 					 break;
