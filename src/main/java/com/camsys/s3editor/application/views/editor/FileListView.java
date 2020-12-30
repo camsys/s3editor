@@ -249,16 +249,6 @@ public class FileListView extends HorizontalLayout {
 	        	String contents = IOUtils.toString(objectData, "utf8"); 
 	        	editorControl.setValue(contents);	
 
-	        } else if(file.getName().endsWith(".csv")) {
-	        	editorControl.setMode(AceMode.csv);
-	        	String contents = IOUtils.toString(objectData, "utf8"); 
-	        	editorControl.setValue(contents);	
-
-	        } else if(file.getName().endsWith(".txt")) {
-	        	editorControl.setMode(AceMode.tsv);
-	        	String contents = IOUtils.toString(objectData, "utf8"); 
-	        	editorControl.setValue(contents);	
-
 	        } else {
 	        	editorControl.setMode(AceMode.plain_text);
 	        	String contents = IOUtils.toString(objectData, "utf8"); 
